@@ -9,6 +9,3 @@ logs/
 .idea/
 .vscode/
 *.iml
-.DS_Store
-__MACOSX/
-Thumbs.db
