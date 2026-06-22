@@ -18,6 +18,11 @@ public class TestConfig {
     public boolean headless() {
         return Boolean.parseBoolean(property("headless", "false"));
     }
+    public boolean startMaximized() {
+    return Boolean.parseBoolean(property("start.maximized", "false"));
+    }
+    
+    
 
     public RegistrationData registrationData() {
         String password = property("password", "Qwerty123!");

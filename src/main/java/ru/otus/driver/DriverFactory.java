@@ -6,15 +6,15 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class DriverFactory {
 
-    private DriverFactory() {
-    }
-
-    public static WebDriver createChromeDriver(boolean headless) {
+    public WebDriver createChromeDriver(boolean headless, boolean startMaximized) {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--window-size=1920,1080");
 
         if (headless) {
             options.addArguments("--headless=new");
+        }
+
+        if (startMaximized) {
+            options.addArguments("--start-maximized");
         }
 
         return new ChromeDriver(options);

@@ -24,7 +24,8 @@ public class FirstAutoTest {
     @BeforeEach
     public void setUp() {
         config = new TestConfig();
-        driver = DriverFactory.createChromeDriver(config.headless());
+        DriverFactory driverFactory = new DriverFactory();
+        driver = driverFactory.createChromeDriver(config.headless(), config.startMaximized());
         registrationFormPage = new RegistrationFormPage(driver);
         registrationFormPage.open(config.formUrl());
     }
